@@ -2,6 +2,7 @@ import logo from "./assets/images/logo.svg";
 import "./assets/css/App.css";
 //Importar componentes:
 import MiPrimerComponente from "./components/MiPrimerComponente";
+import Peliculas from "./components/Peliculas";
 
 function HolaMundo(profesion, edad) {
   const texto = (
@@ -42,7 +43,7 @@ function App() {
       <section className="componentes">
         <MiPrimerComponente/>
         <MiPrimerComponente/>
-        <MiPrimerComponente/>
+        <Peliculas/>
       </section>
 
       </header>

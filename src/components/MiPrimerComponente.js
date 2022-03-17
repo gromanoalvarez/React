@@ -14,9 +14,15 @@ class MiPrimerComponente extends Component{
         }
 
         return (
-            <React.Fragment>
+            <div className="mi-primer-componente">
                 <h1>Este es MiPrimerComponente</h1>
-                <h4>Como no puedo retornar mas de una etiqueta html, entonces puedo utilizar React.Fragment para que las agrupe sin tener que crear una etiqueta div o section, es practicamente invisible al inspeccionar</h4>
+                <h4>Como no puedo retornar mas de una etiqueta html, debo tener que crear una etiqueta div o section con su respectiva clase (en JSX se expresa como className). <br></br> 
+                Opcionalmente puedo utilizar React.Fragment: <br></br>
+                    < React.Fragment >
+                    para que las agrupe EVITANDO CREAR UNA NUEVA ETIQUETA ya que es practicamente invisible al inspeccionar
+                    </React.Fragment>
+                </h4>
+                <h5>Trabajaremos con una variable de array:</h5>
                 <p>{'Mi Receta de: ' + receta.nombre}</p>
                 <p>{'Calorias: ' + receta.calorias}</p>
                 <ol>
@@ -32,7 +38,7 @@ class MiPrimerComponente extends Component{
                     }
                 </ol>
                 <hr/>
-            </React.Fragment>
+            </div>
         );
     }
 }
