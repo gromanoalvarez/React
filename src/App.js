@@ -3,6 +3,7 @@ import "./assets/css/App.css";
 //Importar componentes:
 import MiPrimerComponente from "./components/MiPrimerComponente";
 import Peliculas from "./components/Peliculas";
+import Header from "./components/Header";
 
 function HolaMundo(profesion, edad) {
   const texto = (
@@ -27,7 +28,11 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <Header></Header>
+
+      {/* Para hacer un comentario en JSX debo usar {} y dentro comentar como js */}
+      
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Estamos en <code>src/App.js</code>. El index.js inserta este
@@ -46,7 +51,7 @@ function App() {
         <Peliculas/>
       </section>
 
-      </header>
+      </header> */}
 
     </div>
   );
