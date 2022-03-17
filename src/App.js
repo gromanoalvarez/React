@@ -1,11 +1,11 @@
-import logo from "./assets/images/logo.svg";
 import "./assets/css/App.css";
 //Importar componentes:
-import MiPrimerComponente from "./components/MiPrimerComponente";
-import Peliculas from "./components/Peliculas";
+// import MiPrimerComponente from "./components/MiPrimerComponente";
+// import Peliculas from "./components/Peliculas";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
 import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 
 // function HolaMundo(profesion, edad) {
 //   const texto = (
@@ -57,8 +57,8 @@ function App() {
         </section>
         <Sidebar></Sidebar>
         <div className="clearfix"></div> 
-
-      </div>
+      </div> {/**END DIV CENTER */}
+      <Footer/>
     </div>
   );
 }
