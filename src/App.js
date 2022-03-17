@@ -5,7 +5,7 @@ import MiPrimerComponente from "./components/MiPrimerComponente";
 import Peliculas from "./components/Peliculas";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
-
+import Sidebar from "./components/Sidebar";
 
 // function HolaMundo(profesion, edad) {
 //   const texto = (
@@ -32,30 +32,33 @@ function App() {
     <div className="App">
       <Header></Header>
       <Slider></Slider>
+      <div className="center">
+        <section id="content">
+          {/* Para hacer un comentario en JSX debo usar {} y dentro comentar como js */}
+          {/* 
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              Estamos en <code>src/App.js</code>. El index.js inserta este
+              componente App en el div con id root del index.html!
+            </p>
+            {alert(
+              "En este componente App utilizo LENGUAJE JSX, donde puedo con {} meter javaScript"
+            )}
+            {presentacion}
+            {HolaMundo(profesion, edad)}
 
-      {/* Para hacer un comentario en JSX debo usar {} y dentro comentar como js */}
+            
+          <section className="componentes">
+            <MiPrimerComponente/>
+            <MiPrimerComponente/>
+            <Peliculas/>
+          </section>
+         */}
+        </section>
+        <Sidebar></Sidebar>
+        <div className="clearfix"></div> 
 
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Estamos en <code>src/App.js</code>. El index.js inserta este
-          componente App en el div con id root del index.html!
-        </p>
-        {alert(
-          "En este componente App utilizo LENGUAJE JSX, donde puedo con {} meter javaScript"
-        )}
-        {presentacion}
-        {HolaMundo(profesion, edad)}
-
-        
-      <section className="componentes">
-        <MiPrimerComponente/>
-        <MiPrimerComponente/>
-        <Peliculas/>
-      </section>
-
-      </header> */}
-
+      </div>
     </div>
   );
 }

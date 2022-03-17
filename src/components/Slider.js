@@ -4,12 +4,12 @@ class Slider extends Component{
 
     render(){
         return (
-            <div id="slider" class="slider-big">
+            <div id="slider" className="slider-big">
             <h1>Stairway to heaven</h1>
-            <a href="blog.html" class="btn-white">Ir al Blog</a>
+            <a href="blog.html" className="btn-white">Ir al Blog</a>
         </div>
         );
-    }
+    }                               
 }
 
 export default Slider;
