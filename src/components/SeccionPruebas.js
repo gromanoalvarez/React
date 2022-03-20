@@ -33,7 +33,7 @@ class SeccionPruebas extends Component {
     return texto;
   }
 
-  sumar(e){
+  sumar = (e) => { // si la defino como funcion de flecha no necesito hacer el bind(this) en el evento click
     // this.contador = this.contador+1; || this.contador++; NO FUNCIONA PORQUE PARA QUE UNA VARIABLE SEA REACTIVA Y DINAMICA DEBO DECLARAR EL STATE ya que no puedo modificar su valor directamente en la vista de este modo
     // this.state.contador = this.state.contador +1; NO FUNCIONA PORQUE DEBO UTILIZAR setEstate()
     this.setState({
@@ -98,7 +98,7 @@ class SeccionPruebas extends Component {
 
         <h2 className="subheader">Probando Estados</h2>
         <p>Contador: {this.state.contador}</p>
-        <input type="button" value="Sumar" onClick={this.sumar.bind(this)}></input>
+        <input type="button" value="Sumar" onClick={this.sumar}></input>
         <input type="button" value="Restar" onClick={this.restar.bind(this)}></input>
 
       </section>
