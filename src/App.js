@@ -7,11 +7,15 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
 function App() {
+  const buttonString="Ir al Blog";
 
   return (
     <div className="App">
       <Header></Header>
-      <Slider></Slider>
+      <Slider 
+        title="Stairway to heaven"
+        btn={buttonString}
+      ></Slider>
       <div className="center">
         <SeccionPruebas></SeccionPruebas>
         <Sidebar></Sidebar>
