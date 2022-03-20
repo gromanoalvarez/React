@@ -14,8 +14,8 @@ class Sidebar extends Component {
           <h3>Buscador</h3>
           <p>Encuentra el artículo que buscas</p>
           <form>
-            <input type="text" nameName="search" />
-            <input type="submit" nameName="submit" value="buscar" />
+            <input type="text" className="search" />
+            <input type="submit" className="submit" value="buscar" />
           </form>
         </div>
       </aside>

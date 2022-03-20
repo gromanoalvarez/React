@@ -2,9 +2,10 @@ import "./assets/css/App.css";
 //Importar componentes:
 import Header from "./components/Header";
 import Slider from "./components/Slider";
-import SeccionPruebas from "./components/SeccionPruebas";
+// import SeccionPruebas from "./components/SeccionPruebas";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import Peliculas from "./components/Peliculas";
 
 function App() {
   const buttonString="Ir al Blog";
@@ -17,7 +18,8 @@ function App() {
         btn={buttonString}
       ></Slider>
       <div className="center">
-        <SeccionPruebas></SeccionPruebas>
+        {/* <SeccionPruebas></SeccionPruebas> */}
+        <Peliculas></Peliculas>
         <Sidebar></Sidebar>
         <div className="clearfix"></div> 
       </div> {/**END DIV CENTER */}
