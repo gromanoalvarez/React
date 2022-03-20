@@ -11,11 +11,30 @@ class Peliculas extends Component{
         nombre: 'Germán'
     };
 
+    cambiarTitulo = () => {
+        const {peliculas} = this.state;
+
+        peliculas[0].title = "Mi villano favorito";
+        // La key es necesaria para que React identifique este indice 
+        // Incluso podria aleatoriamente cambiar el titulo 
+        // let random = Math.floor(Math.random()*3)
+        // peliculas[random].title = "Mi villano favorito";
+
+        this.setState({
+            peliculas: peliculas
+        });
+    }
+
     render(){
         return (
             <div id="content" className="peliculas">
                 <h2 className="subheader">Películas</h2>
                 <p>Selección de las películas favoritas de {this.state.nombre}</p>
+                <div>
+                    <button onClick={this.cambiarTitulo}>
+                        Cambiar titulo de primera pelicula
+                    </button>    
+                </div>
 
                 {/**Crear componente de cada película */}
 

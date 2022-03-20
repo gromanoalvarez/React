@@ -2,12 +2,8 @@ import React, {Component} from 'react';
 
 class Pelicula extends Component {
     render(){
-        console.log(this.props.pelicula);
+        // console.log(this.props.pelicula);
         const { title, image } = this.props.pelicula;
-
-        console.log("titulo" + title);
-        console.log("imagen" + image);
-
 
         return(
             <article className="article-item" id="article-template">
