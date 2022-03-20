@@ -70,10 +70,26 @@ class Peliculas extends Component {
       padding: "10px",
     };
 
+    // También podría hacer el condicional con javascript puro aqui, guardando el resultado con una unica variable que luego podría retornar en la vista con llave de interpolación
+    // let hayFavorita;
+    // if(this.state.peliFavorita.title){
+    //     hayFavorita = (
+    //         <p className="favorita" style={bgStyle}>
+    //             <strong>Mi película favorita es: </strong>
+    //             <span>{this.state.peliFavorita.title}</span>
+    //         </p>
+    //     )
+    // }else{
+    //     hayFavorita = (
+    //         <p>No hay favorita seleccionada</p>
+    //     )
+    // }
+
     return (
       <div id="content" className="peliculas">
         <h2 className="subheader">Películas</h2>
         <p>Selección de las películas favoritas de {this.state.nombre}: </p>
+
         {/**Condicional con JSX usando CondicionDeVariable && */}
         {/* {this.state.peliFavorita.title &&
                     <p className="favorita">
