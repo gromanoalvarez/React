@@ -44,7 +44,26 @@ class Peliculas extends Component {
     });
   };
 
+//!   CICLO DE VIDA DE UN COMPONENTE:
+// 1. cuando se monta
+//  2.cuando se muestra: render es el metodo del ciclo de vida principal  y obligatorio que se encarga de mostrar en la vista  un resultado
+//3. cuando se desmonta
+
+    // componentDidCatch(){
+    //     alert("componentDidCatch: Cuando el componente atrapa un valor");
+    // }
+    // componentDidUpdate(){
+    //     alert("componentDidUpdate: Cuando se actualiza o modifica un valor del componente");
+    // }
+    // componentDidMount(){
+    //     alert("componentDidMount: Cuando el componente ya esta montado");
+    // }
+    // componentWillUnmount(){
+    //     alert("componentWillUnmount: Cuando sera desmontado un componente")
+    // }
+
   render() {
+    //   alert("render: cuando se hace visible el componente y se utiliza algo de el");
     const bgStyle = {
       background: "green",
       color: "white",
