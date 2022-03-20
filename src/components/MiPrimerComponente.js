@@ -18,8 +18,8 @@ class MiPrimerComponente extends Component {
         <h4>
           Como no puedo retornar mas de una etiqueta html, debo tener que crear
           una etiqueta div o section con su respectiva clase (en JSX se expresa
-          como className). <br></br>
-          Opcionalmente puedo utilizar React.Fragment: <br></br>
+          como <code>className</code>). <br></br>
+          Opcionalmente puedo utilizar <code>React.Fragment</code>: <br></br>
           <React.Fragment>
             para que las agrupe EVITANDO CREAR UNA NUEVA ETIQUETA ya que es
             practicamente invisible al inspeccionar
