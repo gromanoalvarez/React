@@ -15,6 +15,9 @@ class MiPrimerComponente extends Component {
     return (
       <div className="mi-primer-componente">
         <h1>Este es MiPrimerComponente</h1>
+        {this.props.saludo &&
+          <h2>{this.props.saludo}, esto se vera solo cuando se pase la props</h2>
+        }
         <h4>
           Como no puedo retornar mas de una etiqueta html, debo tener que crear
           una etiqueta div o section con su respectiva clase (en JSX se expresa

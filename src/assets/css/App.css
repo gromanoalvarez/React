@@ -74,6 +74,9 @@ body{
 #menu a:hover {
   color: #3cb2d3;
 }
+.active{
+  border-bottom: 2px solid #3cb2d3;
+}
 .clearfix{ 
   clear: both;/*Bloquea los floats que no suban al header*/
   float: none; /* limpia los floats del header para que los floats del main no se cuelen arriba*/
@@ -100,6 +103,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
   padding-top: 130px;
   text-align: center;
 }
+#slider.slider-small{
+  height: 150px;
+}
+#slider.slider-small h1{
+  margin-top: 0.2px;
+  padding: 0px;
+  padding-top: 53px;
+}
 .btn-white{
   display: block;
   background:white;
@@ -122,15 +133,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
   background: #444;
   color: white;
 }
-#slider.slider-small{
-  height: 150px;
-}
-#slider.slider-small h1{
-  margin-top: 0.2px;
-  padding: 0px;
-  padding-top: 53px;
 
-}
 #content{
   width: 70%;
   float: left;
