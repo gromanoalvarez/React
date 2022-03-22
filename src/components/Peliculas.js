@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Pelicula from "./Pelicula";
+import Slider from "./Slider";
+import Sidebar from "./Sidebar";
 
 class Peliculas extends Component {
   state = {
@@ -28,7 +30,7 @@ class Peliculas extends Component {
     const { peliculas } = this.state;
 
     peliculas[0].title = "Mi villano favorito";
-    // La key es necesaria para que React identifique este indice
+    // La key es necesaria para que React identifique este indice [0]
     // Incluso podria aleatoriamente cambiar el titulo
     // let random = Math.floor(Math.random()*3)
     // peliculas[random].title = "Mi villano favorito";
@@ -86,44 +88,53 @@ class Peliculas extends Component {
     // }
 
     return (
-      <div id="content" className="peliculas">
-        <h2 className="subheader">Películas</h2>
-        <p>Selección de las películas favoritas de {this.state.nombre}: </p>
+      <div id="peliculas">
+        <Slider title="Peliculas" size="slider-small"></Slider>
+        <div className="center">
+          <div id="content" className="peliculas">
+            <h2 className="subheader">Listado de Películas</h2>
 
-        {/**Condicional con JSX usando CondicionDeVariable && */}
-        {/* {this.state.peliFavorita.title &&
-                    <p className="favorita">
-                        <strong>La película favorita es: </strong>
-                        <span>{this.state.peliFavorita.title}</span>
-                    </p>
-                } */}
-        {this.state.peliFavorita.title ? (
-          <p className="favorita" style={bgStyle}>
-            <strong>Mi película favorita es: </strong>
-            <span>{this.state.peliFavorita.title}</span>
-          </p>
-        ) : (
-          <p>No hay favorita seleccionada</p>
-        )}
+            {/**Crear componente de cada película */}
+            <div id="articles" className="peliculas">
+              {this.state.peliculas.map((pelicula, i) => {
+                return (
+                  <Pelicula
+                    key={i}
+                    pelicula={pelicula}
+                    marcarFavorita={this.favorita}
+                  ></Pelicula>
+                );
+              })}
+            </div>
 
-        <div>
-          <button onClick={this.cambiarTitulo}>
-            Cambiar título de la primer película
-          </button>
-        </div>
+            <p>Película favorita de {this.state.nombre}: </p>
+            {/**Condicional con JSX usando CondicionDeVariable && */}
+            {/* {this.state.peliFavorita.title &&
+                        <p className="favorita">
+                            <strong>La película favorita es: </strong>
+                            <span>{this.state.peliFavorita.title}</span>
+                        </p>
+                    } */}
+            {this.state.peliFavorita.title ? (
+              <p className="favorita" style={bgStyle}>
+                <strong>Mi película favorita es: </strong>
+                <span>{this.state.peliFavorita.title}</span>
+              </p>
+            ) : (
+              <p>No hay favorita seleccionada</p>
+            )}
 
-        {/**Crear componente de cada película */}
+            <div>
+              <button onClick={this.cambiarTitulo}>
+                Cambiar título de la primer película
+              </button>
+            </div>
 
-        <div id="articles" className="peliculas">
-          {this.state.peliculas.map((pelicula, i) => {
-            return (
-              <Pelicula
-                key={i}
-                pelicula={pelicula}
-                marcarFavorita={this.favorita}
-              ></Pelicula>
-            );
-          })}
+
+          </div>
+          <Sidebar
+            blog="false"
+            ></Sidebar>
         </div>
       </div>
     );

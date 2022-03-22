@@ -10,6 +10,8 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 import Blog from "./components/Blog";
+import Formulario from "./components/Formulario";
+
 
 class Router extends Component {
   render() {
@@ -34,6 +36,10 @@ class Router extends Component {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/blog" element={<Blog />} />
+            <Route exact path="/formulario" element={<Formulario />} />
+            <Route exact path="/peliculas" element={<Peliculas />} />
+
+
             <Route
               exact
               path="/segunda-ruta"
