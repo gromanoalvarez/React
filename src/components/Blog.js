@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "./Slider";
 import Sidebar from "./Sidebar";
+import Articles from "./Articles";
 // import axios from "axios";
 
 class Blog extends Component {
@@ -32,6 +33,8 @@ class Blog extends Component {
                 })}
               </div>)
             } */}
+
+            <Articles></Articles>
 
           </div>
           <Sidebar blog="true"></Sidebar>

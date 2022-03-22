@@ -45,7 +45,7 @@ class Formulario extends Component {
   };
 
   render() {
-      console.log(this.state.user.nombre)
+      // console.log(this.state.user.nombre)
     return (
       <div id="formulario">
         {/* <Slider title="Formulario" size="slider-small"></Slider> */}
