@@ -41,6 +41,7 @@ class Formulario extends Component {
     this.setState({
         user: user
     })
+
   };
 
   render() {
