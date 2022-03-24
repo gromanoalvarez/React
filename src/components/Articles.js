@@ -22,9 +22,27 @@ class Articles extends Component {
 
   //opcion 2
   componentDidMount() {
-    this.getArticles();
+    let home = this.props.home;
+    if(home === "true"){
+      this.getLastArticles();
+    }else{
+      this.getArticles();
+    }
   }
-
+ // Mostrar los ultimos 5 articulos de la Api restful
+// router.get('/articles/:last?', ArticleController.getArticles);
+ getLastArticles = () => {
+  // console.log("metodo getArticles funcionando");
+  // como es una promesa con el .then tomo la respuesta del servidor creado en nodejs
+  axios.get(this.url + "articles/last").then((res) => {
+    // modifico con setState el valor de mis variables dinamicas
+    this.setState({
+      articles: res.data.articles,
+      status: "success",
+    });
+    //   console.log(this.state);
+  });
+};
   // Mostrar todos los articulos de la Api restful
   getArticles = () => {
     // console.log("metodo getArticles funcionando");
