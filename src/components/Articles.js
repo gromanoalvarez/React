@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../Global";
-import imageDefault from "../assets/images/DEFAULT.2jpg.png"
+import imageDefault from "../assets/images/DEFAULT.2jpg.png";
+import Moment from "react-moment";
+import "moment/locale/es";
 
 class Articles extends Component {
   url = Global.url;
@@ -54,22 +56,26 @@ class Articles extends Component {
                   alt={article.title}
                 />
               ) : (
-                <img
-                src={imageDefault}
-                alt={article.title}
-              />
-              )
-              }
+                <img src={imageDefault} alt={article.title} />
+              )}
             </div>
+
             <h2>{article.title}</h2>
-            <span className="date">{article.date}</span>
+
+            <span className="date">
+              <Moment locale="es" fromNow>{article.date}</Moment>
+            </span>
+
             <a href="article.html">Leer más</a>
+
             <div className="clearfix"></div>
+
           </article>
         );
       });
 
       return <div id="articles">{listArticles}</div>;
+
     } else if (
       this.state.articles.length === 0 &&
       this.state.status === "success"
