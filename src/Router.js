@@ -36,6 +36,9 @@ class Router extends Component {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/blog" element={<Blog />} />
+            <Route exact path="/blog/articulo/:id" element={
+              <h1>Sere el detallado de un articulo</h1>
+            }/>
             <Route exact path="/formulario" element={<Formulario />} />
             <Route exact path="/peliculas" element={<Peliculas />} />
 
