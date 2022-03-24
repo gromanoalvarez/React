@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Global from '../Global'
 
 class Articles extends Component {
-  state = {
-    articles: [],
-    status: null,
-  };
+
+    url = Global.url;
+
+    state = {
+        articles: [],
+        status: null,
+    };
 
   //opcion 1
   // constructor(props){
@@ -22,7 +26,7 @@ class Articles extends Component {
   getArticles = () => {
     // console.log("metodo getArticles funcionando");
     // como es una promesa con el .then tomo la respuesta del servidor creado en nodejs
-    axios.get("http://localhost:3900/api/articles/").then((res) => {
+    axios.get(this.url+"articles").then((res) => {
       // modifico con setState el valor de mis variables dinamicas
       this.setState({
         articles: res.data.articles,
