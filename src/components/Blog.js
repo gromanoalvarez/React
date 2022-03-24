@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "./Slider";
 import Sidebar from "./Sidebar";
 import Articles from "./Articles";
+// axios es la libreria que permite hacer las peticiones ajax al servidor de nodejs
 // import axios from "axios";
 
 class Blog extends Component {
@@ -11,6 +12,8 @@ class Blog extends Component {
   // };
 
   render() {
+    //Prueba de peticion ajax al servidor creado con nodejs (lo ideal es hacerlo en un metodo y extraerlo fuera del render)
+    // como es una promesa con el .then tomo la respuesta del servidor creado en nodejs
     // axios.get("http://localhost:3900/api/articles/").then((res) => {
     //   console.log(res.data);
     //   this.setState({
@@ -29,7 +32,7 @@ class Blog extends Component {
             {/* {this.state.status === "success" && 
               (<div>
                 {this.state.articles.map((article) => {
-                  return <h1 key={article._id}>{article.title}</h1>;
+                  return (<h1 key={article._id}>{article.title}</h1>)
                 })}
               </div>)
             } */}
