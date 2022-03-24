@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Global from '../Global'
+import Global from "../Global";
+import imageDefault from "../assets/images/DEFAULT.2jpg.png"
 
 class Articles extends Component {
+  url = Global.url;
 
-    url = Global.url;
-
-    state = {
-        articles: [],
-        status: null,
-    };
+  state = {
+    articles: [],
+    status: null,
+  };
 
   //opcion 1
   // constructor(props){
@@ -26,7 +26,7 @@ class Articles extends Component {
   getArticles = () => {
     // console.log("metodo getArticles funcionando");
     // como es una promesa con el .then tomo la respuesta del servidor creado en nodejs
-    axios.get(this.url+"articles").then((res) => {
+    axios.get(this.url + "articles").then((res) => {
       // modifico con setState el valor de mis variables dinamicas
       this.setState({
         articles: res.data.articles,
@@ -40,27 +40,36 @@ class Articles extends Component {
     if (this.state.articles.length >= 1) {
       let listArticles = this.state.articles.map((article) => {
         return (
-            <article className="article-item" id="article-template" key={article._id}>
-              <div className="image-wrap">
+          <article
+            className="article-item"
+            id="article-template"
+            key={article._id}
+          >
+            <div className="image-wrap">
+              {/* router.get('/get-image/:image', ArticleController.getImage); */}
+
+              {article.image !== null ? (
                 <img
-                  src="https://i.pinimg.com/564x/db/86/85/db8685f39c83d34c6090b8839e0bd864.jpg"
+                  src={this.url + "get-image/" + article.image}
                   alt={article.title}
                 />
-              </div>
-              <h2>{article.title}</h2>
-              <span className="date">{article.date}</span>
-              <a href="article.html">Leer más</a>
-              <div className="clearfix"></div>
-            </article>
+              ) : (
+                <img
+                src={imageDefault}
+                alt={article.title}
+              />
+              )
+              }
+            </div>
+            <h2>{article.title}</h2>
+            <span className="date">{article.date}</span>
+            <a href="article.html">Leer más</a>
+            <div className="clearfix"></div>
+          </article>
         );
       });
 
-      return (
-        <div id="articles">
-            {listArticles}
-        </div>
-      );
-
+      return <div id="articles">{listArticles}</div>;
     } else if (
       this.state.articles.length === 0 &&
       this.state.status === "success"

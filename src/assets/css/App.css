@@ -246,6 +246,8 @@ textarea{
   border: 1px solid #ccc;
 }
 .article-item .image-wrap img{
+  width: 130px;
+  height: 130px;
   text-align: center;
 }
 .article-item h2{
