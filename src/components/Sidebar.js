@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 
 class Sidebar extends Component {
+
   render() {
     return (
       <aside id="sidebar">
         {this.props.blog === "true" &&
                 <div id="nav-blog" className="sidebar-item">
                   <h3>Puedes hacer esto</h3>
-                  <a href="#" className="btn btn-success">
+                  <Link to={"/home"} className="btn btn-success">
                     Crear artículo
-                  </a>
+                  </Link>
                 </div>
         }
 

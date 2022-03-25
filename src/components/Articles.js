@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Global from "../Global";
 import imageDefault from "../assets/images/DEFAULT.2jpg.png";
-import Moment from "react-moment";
-import "moment/locale/es";
+// import Moment from "react-moment";
+// import "moment/locale/es";
 import {Link} from 'react-router-dom';
 
 class Articles extends Component {
@@ -23,8 +23,11 @@ class Articles extends Component {
   //opcion 2
   componentDidMount() {
     let home = this.props.home;
+    let search = this.props.search;
     if(home === "true"){
       this.getLastArticles();
+    }else if(search && search !== null && search !== undefined){
+      this.getArticlesBySearch(search);
     }else{
       this.getArticles();
     }
@@ -51,11 +54,29 @@ class Articles extends Component {
       // modifico con setState el valor de mis variables dinamicas
       this.setState({
         articles: res.data.articles,
-        status: "success",
+        status: "success"
       });
       //   console.log(this.state);
     });
   };
+
+// router.get('/search/:search', ArticleController.search); 
+  getArticlesBySearch = (search) => {
+    axios.get(this.url + "search/"+search)
+    .then((res) => {
+        this.setState({
+          articles: res.data.articles,
+          status: "success"
+        });
+    })
+    .catch(err => {
+      this.setState({
+        articles: [],
+        status: "success"
+      });
+    });
+  };
+
   render() {
     //efecto de carga en la vista de los articulos
     if (this.state.articles.length >= 1) {
@@ -82,7 +103,7 @@ class Articles extends Component {
             <h2>{article.title}</h2>
 
             <span className="date">
-              <Moment locale="es" fromNow>{article.date}</Moment>
+              {/* <Moment locale="es" fromNow>{article.date}</Moment> */}
             </span>
 
             <Link to={'/blog/articulo/' + article._id} >Leer más</Link>
@@ -101,7 +122,7 @@ class Articles extends Component {
     ) {
       return (
         <div id="articles">
-          <h1>Carga exitosa, no hay articulos creados</h1>
+          <h1>No hay articulos creados que coincidan con la búsqueda</h1>
         </div>
       );
     } else {

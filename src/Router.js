@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 
 //Importar componentes:
 import MiPrimerComponente from "./components/MiPrimerComponente";
-// import SeccionPruebas from "./components/SeccionPruebas";
 import Peliculas from "./components/Peliculas";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -11,7 +10,8 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 import Blog from "./components/Blog";
 import Formulario from "./components/Formulario";
-
+import Search from "./components/Search";
+import WithRouter from "./components/WithRouter";
 
 class Router extends Component {
   render() {
@@ -39,6 +39,9 @@ class Router extends Component {
             <Route exact path="/blog/articulo/:id" element={
               <h1>Sere el detallado de un articulo</h1>
             }/>
+            <Route exact path="/blog/busqueda/:search" element={<WithRouter/>} />
+            
+
             <Route exact path="/formulario" element={<Formulario />} />
             <Route exact path="/peliculas" element={<Peliculas />} />
 
