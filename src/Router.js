@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useParams, Navigate } from "react-router-dom";
 
 //Importar componentes:
 import MiPrimerComponente from "./components/MiPrimerComponente";
@@ -10,16 +10,16 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 import Blog from "./components/Blog";
 import Formulario from "./components/Formulario";
-import Search from "./components/Search";
 import WithRouter from "./components/WithRouter";
 
 class Router extends Component {
+
   render() {
+
     function ObtenerParametros() {
       const params = useParams();
       const nombre = params.nombre;
       const apellidos = params.apellidos;
-
       return (
         <div id="content">
           <h1 className="subheader">Página de pruebas</h1>
@@ -28,6 +28,11 @@ class Router extends Component {
         </div>
       );
     }
+
+    function GetParamsRedirect(){
+      let params = useParams();
+      return (<Navigate to={'/blog/busqueda/'+params.search} />);
+    };
 
     return (
       <BrowserRouter>
@@ -40,8 +45,7 @@ class Router extends Component {
               <h1>Sere el detallado de un articulo</h1>
             }/>
             <Route exact path="/blog/busqueda/:search" element={<WithRouter/>} />
-            
-
+            <Route exact path="/redirect/:search" element={<GetParamsRedirect/>} />
             <Route exact path="/formulario" element={<Formulario />} />
             <Route exact path="/peliculas" element={<Peliculas />} />
 
