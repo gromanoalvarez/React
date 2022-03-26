@@ -17,9 +17,9 @@ class Router extends Component {
   render() {
 
     function ObtenerParametros() {
-      const params = useParams();
-      const nombre = params.nombre;
-      const apellidos = params.apellidos;
+      let params = useParams();
+      let nombre = params.nombre;
+      let apellidos = params.apellidos;
       return (
         <div id="content">
           <h1 className="subheader">Página de pruebas</h1>

@@ -3,37 +3,31 @@ import {Link, Navigate} from 'react-router-dom';
 
 class Sidebar extends Component {
 
-  // searchRef = React.createRef();
+  searchRef = React.createRef();
 
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     search: "",
-  //     redirect: false
-  //   }
-  // }
+  constructor(props){
+    super(props);
+    this.state = {
+      search: "",
+      redirect: false
+    }
+  }
 
-  // redirectToSearch = (e) => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     search: this.searchRef.current.value,
-  //     redirect: true
-  //   });
-  // }
+  redirectToSearch = (e) => {
+    e.preventDefault();
+    this.setState({
+      search: this.searchRef.current.value,
+      redirect: true
+    });
+  }
 
-  // componentWillUnmount(){
-  //   this.setState({
-  //     search: "",
-  //     redirect: false
-  //   });
-  // }
   render() {
 
-    // if(this.state.redirect){
-    //   return (
-    //     <Navigate reemplace to={'/blog/busqueda/'+this.state.search}></Navigate>
-    //   );
-    // }
+    if(this.state.redirect){
+      return (
+        <Navigate replace to={'/redirect/'+this.state.search}></Navigate>
+      );
+    }
 
     return (
       <aside id="sidebar">
