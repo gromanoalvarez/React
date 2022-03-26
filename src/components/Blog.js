@@ -28,15 +28,8 @@ class Blog extends Component {
         <div className="center">
           <div id="content">
             {/**listado de artículos que vendran del api rest de nodejs */}
-
-            {/* {this.state.status === "success" && 
-              (<div>
-                {this.state.articles.map((article) => {
-                  return (<h1 key={article._id}>{article.title}</h1>)
-                })}
-              </div>)
-            } */}
-
+            <h5>En este apartado podrás a través del Blog poner a prueba el CRUD, es decir "Crear, leer, actualizar y borrar" artículos que se guardan en la Base de datos de MongoDB.</h5>
+            <h1>Todos los articulos:</h1>
             <Articles></Articles>
 
           </div>

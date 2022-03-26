@@ -13,7 +13,7 @@ class Header extends Component{
                 <div id="logo">
                     <img src={logo} alt="Logotipo" className="app-logo" />
                     <span id="brand">
-                        <strong>Curso</strong>React
+                        <strong>ThisIs</strong>React
                     </span>
                 </div>
     
@@ -27,13 +27,13 @@ class Header extends Component{
                             <NavLink to="/blog" activeclassname="active">Blog</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/formulario" activeclassname="active">Formulario</NavLink>
+                            <NavLink to="/formulario" activeclassname="active">Prueba 1</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/peliculas" activeclassname="active">Películas</NavLink>
+                            <NavLink to="/peliculas" activeclassname="active">Prueba 2</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/pruebas/german/alvarez" activeclassname="active">Página 2</NavLink>
+                            <NavLink to="/pruebas/german/alvarez" activeclassname="active">Prueba 3</NavLink>
                         </li>
                     </ul>
                 </nav>

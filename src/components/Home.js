@@ -5,11 +5,11 @@ import Articles from "./Articles";
 
 class Home extends Component {
   render() {
-    const buttonString = "Ir al Blog";
+    const buttonString = "BLOG";
 
     return (
       <div id="home">
-        <Slider title="Stairway to heaven" btn={buttonString} size="slider-big"></Slider>
+        <Slider title="Single Page Application" btn={buttonString} size="slider-big"></Slider>
         <div className="center">
           <div id="content">
             <h1 className="subheader">Últimos artículos</h1>

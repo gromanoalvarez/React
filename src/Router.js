@@ -13,6 +13,8 @@ import Formulario from "./components/Formulario";
 import WithRouter from "./components/WithRouter";
 import ObtenerId from "./components/ObtenerId";
 import CreateArticle from "./components/CreateArticle";
+import EditArticle from "./components/EditArticle";
+
 
 class Router extends Component {
 
@@ -44,6 +46,7 @@ class Router extends Component {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/blog" element={<Blog />} />
             <Route exact path="/blog/crear" element={<CreateArticle></CreateArticle>}/>
+            <Route exact path="/blog/editar/:id" element={<EditArticle></EditArticle>}/>
             <Route exact path="/blog/articulo/:id" element={<ObtenerId></ObtenerId>}/>
             <Route exact path="/blog/busqueda/:search" element={<WithRouter/>} />
             <Route exact path="/redirect/:search" element={<GetParamsRedirect/>} />
