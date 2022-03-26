@@ -17,7 +17,9 @@ class Home extends Component {
               home="true"
             ></Articles>
           </div>
-          <Sidebar></Sidebar>
+          <Sidebar
+            blog = "true"
+            ></Sidebar>
         </div>
       </div>
     );

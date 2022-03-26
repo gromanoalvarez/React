@@ -206,7 +206,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
   margin-bottom: 5px;
   font-size: 17px;
 }
-input[type="text"],textarea{ /*SELECTOR POR ETIQUETA [ATRIBUTO="VALOR"] pongo , y aplico lo mismo heredo a textarea*/
+input[type="text"],
+input[type="file"],
+textarea{ /*SELECTOR POR ETIQUETA [ATRIBUTO="VALOR"] pongo , y aplico lo mismo heredo a textarea*/
   width: 100%;
   min-height: 30px;
   border: 1px solid #ccc;
@@ -216,6 +218,9 @@ input[type="text"],textarea{ /*SELECTOR POR ETIQUETA [ATRIBUTO="VALOR"] pongo , 
 }
 input[type="text"]:focus, textarea:focus{ /*FOCUS es para cuando HAGO CLICK*/
 box-shadow: 0px 0px 5px #eee inset;/*box- shadow (es difuminado) INSET es para que lo meta por dentro del input*/
+}
+input[type="submit"]{
+  margin-top: 15px;
 }
 textarea{
   width: 100%;

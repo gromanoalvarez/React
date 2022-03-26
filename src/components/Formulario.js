@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import Slider from "./Slider";
-import Sidebar from "./Sidebar";
+// import Sidebar from "./Sidebar";
 
 class Formulario extends Component {
   nombreRef = React.createRef();
@@ -109,7 +109,7 @@ class Formulario extends Component {
               <input type="submit" value="Enviar" className="btn btn-success" />
             </form>
           </div>
-          <Sidebar blog="false"></Sidebar>
+          {/* <Sidebar blog="false"></Sidebar> */}
         </div>
       </div>
     );

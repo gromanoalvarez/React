@@ -31,15 +31,13 @@ class Sidebar extends Component {
 
     return (
       <aside id="sidebar">
-        {this.props.blog === "true" &&
                 <div id="nav-blog" className="sidebar-item">
                   <h3>Puedes hacer esto</h3>
-                  <Link to={"/formulario"} className="btn btn-success">
+                  <Link to={"/blog/crear"} className="btn btn-success">
                     Crear artículo
                   </Link>
                 </div>
-        }
-
+        {this.props.blog === "true" &&
         <div id="search" className="sidebar-item">
           <h3>Buscador</h3>
           <p>Encuentra el artículo que buscas</p>
@@ -48,6 +46,8 @@ class Sidebar extends Component {
             <input type="submit" className="submit" value="Buscar"/>
           </form>
         </div>
+        }
+
       </aside>
     );
   }
