@@ -3,12 +3,15 @@ import axios from "axios";
 import { Navigate } from "react-router-dom";
 import Global from "../Global";
 import SimpleReactValidator from "simple-react-validator";
+import Swal from 'sweetalert2'
 
 //Validacion de formularios y alertas
 class CreateArticle extends Component {
   url = Global.url;
   titleRef = React.createRef();
   contentRef = React.createRef();
+  Swal = require('sweetalert2');
+
 
   constructor(props) {
     super(props);
@@ -79,7 +82,11 @@ class CreateArticle extends Component {
             article: res.data.article,
             status: "waiting",
           });
-
+          Swal.fire(
+            'Buen trabajo',
+            'El titulo y contenido del articulo se han guardado ',
+            'waiting'
+          )
           //B-Subida de imagen:
           if (this.state.selectedFile !== null) {
             //1.Sacar el id del articulo guardado
@@ -91,7 +98,6 @@ class CreateArticle extends Component {
               this.state.selectedFile,
               this.state.selectedFile.name
             );
-
             //3.peticion ajax post para "guardar imagen"
             // router.post('/upload-image/:id?', md_upload, ArticleController.upload); //utilizo middleware multipart para form-data
             axios
@@ -102,28 +108,57 @@ class CreateArticle extends Component {
                     article: res.data.article,
                     status: "success",
                   });
+                  Swal.fire(
+                    'Buen trabajo',
+                    'La imagen del articulo se ha guardado ',
+                    'succes'
+                  )
                 } else {
                   this.setState({
                     article: res.data.article,
                     status: "failed",
                   });
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Algo malo ocurrio con la imagen!',
+                    footer: 'Verifica los formatos y extensiones permitidos'
+                  })
                 }
               });
           } else {
             this.setState({
               status: "success",
             });
+            Swal.fire(
+              'Bien hecho!',
+              'El articulo se ha guardado sin imagen!',
+              'success'
+            )
           }
         } else {
           this.setState({
             status: "failed",
           });
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No hay articulo para guardar!',
+            footer: 'Revisa el envio por URL'
+          })
         }
       });
     } else {
       this.setState({
         status: "failed",
       });
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Validacion de formulario rechazada!',
+        footer: 'Asegurate de cumplir con lo pedido en cada campo'
+      })
+
       this.validator.showMessages();
       // rerender to show messages for the first time
       // you can use the autoForceUpdate option to do this automatically`
