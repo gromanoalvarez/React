@@ -3,7 +3,7 @@ import axios from "axios";
 import { Navigate } from "react-router-dom";
 import Global from "../Global";
 import SimpleReactValidator from "simple-react-validator";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 //Validacion de formularios y alertas
 class CreateArticle extends Component {

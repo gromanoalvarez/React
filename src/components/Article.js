@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import Global from "../Global";
 import Sidebar from "./Sidebar";
 import Moment from "react-moment";
 import "moment-timezone";
 import imageDefault from "../assets/images/DEFAULT.2jpg.png";
-
+import Swal from "sweetalert2";
 
 class Article extends Component {
   url;
@@ -44,7 +44,40 @@ class Article extends Component {
       });
   };
 
+  deleteArticle = (id) => {
+    Swal.fire({
+      title: "Estas seguro de borrar el articulo ?",
+      text: "Borrar es definitivo!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borrar!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // router.delete('/article/:id', ArticleController.delete);
+        axios.delete(this.url + "/article/" + id).then((res) => {
+          this.setState({
+            article: res.data.article,
+            status: "deleted",
+          });
+          Swal.fire(
+            "Borrado!",
+            "El articulo se ha borrado con exito.",
+            "success"
+          );
+        });
+        return <Navigate to="/blog" />;
+      } else {
+        Swal.fire("Calma!", "El articulo sigue intacto.", "success");
+      }
+    });
+  };
+
   render() {
+    if (this.state.status === "deleted") {
+      return <Navigate to="/blog"></Navigate>;
+    }
     return (
       <div className="center">
         <section id="content">
@@ -52,13 +85,13 @@ class Article extends Component {
             <article className="article-item article-detail">
               <div className="image-wrap">
                 {/* router.get('/get-image/:image', ArticleController.getImage); */}
-                    {this.state.article.image !== null ? (
-                    <img
+                {this.state.article.image !== null ? (
+                  <img
                     src={this.url + "get-image/" + this.state.article.image}
                     alt={this.state.article.title}
-                    />
+                  />
                 ) : (
-                    <img src={imageDefault} alt={this.state.article.title} />
+                  <img src={imageDefault} alt={this.state.article.title} />
                 )}
               </div>
 
@@ -71,9 +104,17 @@ class Article extends Component {
 
               <p>{this.state.article.content} </p>
 
-              <button href="#" className="btn btn-danger">Eliminar</button>
-              <Link to="" className="btn btn-warning">Editar</Link>
-
+              <button
+                onClick={() => {
+                  this.deleteArticle(this.state.article._id);
+                }}
+                className="btn btn-danger"
+              >
+                Eliminar
+              </button>
+              <Link to="" className="btn btn-warning">
+                Editar
+              </Link>
 
               <div className="clearfix"></div>
             </article>
