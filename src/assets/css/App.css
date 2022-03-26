@@ -162,9 +162,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
   margin: 0px auto;
 }
 .btn{
-  display: block;
+  display: block !important;
   background-color: black;
-  color: white;
+  color: white !important;
   padding: 15px;
   font-weight: bold;
   text-transform: uppercase;
@@ -180,6 +180,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
 }
 .btn-success:hover{/*HOVER es para cuando PASO POR ENCIMA EL RATON*/
   background-color: black;
+}
+.btn-danger{
+  margin-right: 20px;
+  background-color: rgb(233, 2, 2);
+  float: left;
+}
+.btn-danger:hover{
+  text-decoration: underline;
+}
+.btn-warning{
+  background-color: rgb(255, 155, 6);
+  float: left;
+  margin-top: 0px !important;
 }
 .mid-form{
   width: 50%;
@@ -259,6 +272,7 @@ textarea{
 }
 .article-item .date{
   display: block;
+  text-align: right;
   width: 100%;
   color: rgb(122,122,122);
 }

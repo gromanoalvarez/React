@@ -11,6 +11,7 @@ import Error from "./components/Error";
 import Blog from "./components/Blog";
 import Formulario from "./components/Formulario";
 import WithRouter from "./components/WithRouter";
+import ObtenerId from "./components/ObtenerId";
 
 class Router extends Component {
 
@@ -41,9 +42,7 @@ class Router extends Component {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/blog" element={<Blog />} />
-            <Route exact path="/blog/articulo/:id" element={
-              <h1>Sere el detallado de un articulo</h1>
-            }/>
+            <Route exact path="/blog/articulo/:id" element={<ObtenerId></ObtenerId>}/>
             <Route exact path="/blog/busqueda/:search" element={<WithRouter/>} />
             <Route exact path="/redirect/:search" element={<GetParamsRedirect/>} />
             <Route exact path="/formulario" element={<Formulario />} />

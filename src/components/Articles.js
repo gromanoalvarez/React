@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Global from "../Global";
 import imageDefault from "../assets/images/DEFAULT.2jpg.png";
-// import Moment from "react-moment";
-// import "moment/locale/es";
+import Moment from "react-moment";
+import "moment/locale/es";
 import {Link} from 'react-router-dom';
 
 class Articles extends Component {
@@ -89,7 +89,6 @@ class Articles extends Component {
           >
             <div className="image-wrap">
               {/* router.get('/get-image/:image', ArticleController.getImage); */}
-
               {article.image !== null ? (
                 <img
                   src={this.url + "get-image/" + article.image}
@@ -103,7 +102,7 @@ class Articles extends Component {
             <h2>{article.title}</h2>
 
             <span className="date">
-              {/* <Moment locale="es" fromNow>{article.date}</Moment> */}
+              <Moment locale="es" fromNow>{article.date}</Moment>
             </span>
 
             <Link to={'/blog/articulo/' + article._id} >Leer más</Link>
