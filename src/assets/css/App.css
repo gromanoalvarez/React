@@ -102,6 +102,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
   padding: 0px;
   padding-top: 130px;
   text-align: center;
+  font-size: 50px;
 }
 #slider.slider-small{
   height: 150px;
@@ -146,7 +147,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
 }
 .sidebar-item{
   background: #f7f7f7;
-  padding: 20px;
+  padding: 30px;
   margin-top: 30px;
 }
 .sidebar-item h3{
@@ -157,12 +158,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
   margin-bottom: 10px;
   border-bottom: 3px solid #eee;
 }
-.sidebar-item .btn{
-  margin-top: 10px;
-  margin: 0px auto;
-}
+
 .btn{
-  display: block !important;
+  display: inline-block !important;
   background-color: black;
   color: white !important;
   padding: 15px;
@@ -175,10 +173,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61dafb', end
   border: none;
   cursor: pointer;
 }
+.btn-link{
+  background-color: red;
+
+}
+
 .btn-success{
   background-color: rgb(23, 150,19);
 }
-.btn-success:hover{/*HOVER es para cuando PASO POR ENCIMA EL RATON*/
+.btn-success:hover, .btn-link:hover{
   background-color: black;
 }
 .btn-danger{
@@ -238,6 +241,9 @@ textarea{
 .thumb{
   width: 220px;
   height: 100px;
+}
+#static-message, .mi-primer-componente{
+  background-color: #8edcf19e;
 }
 
 #footer{

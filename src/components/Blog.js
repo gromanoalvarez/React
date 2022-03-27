@@ -28,8 +28,8 @@ class Blog extends Component {
         <div className="center">
           <div id="content">
             {/**listado de artículos que vendran del api rest de nodejs */}
-            <h5>En este apartado podrás a través del Blog poner a prueba el CRUD, es decir "Crear, leer, actualizar y borrar" artículos que se guardan en la Base de datos de MongoDB.</h5>
-            <h1>Todos los articulos:</h1>
+            <h3>En este apartado podrás a través del Blog poner a prueba el CRUD, es decir "Crear, leer, actualizar y borrar" artículos que se guardan en la Base de datos de MongoDB.</h3>
+            <h1 className="subheader">Todos los artículos:</h1>
             <Articles></Articles>
 
           </div>

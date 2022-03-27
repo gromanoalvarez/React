@@ -121,7 +121,7 @@ class Articles extends Component {
     ) {
       return (
         <div id="articles">
-          <h1>No hay articulos creados que coincidan con la búsqueda</h1>
+          <h1>No hay artículos creados que coincidan con la búsqueda</h1>
         </div>
       );
     } else {

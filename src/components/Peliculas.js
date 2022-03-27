@@ -89,11 +89,11 @@ class Peliculas extends Component {
 
     return (
       <div id="peliculas">
-        <Slider title="Peliculas" size="slider-small"></Slider>
+        <Slider title="Prueba con listado de Peliculas" size="slider-small"></Slider>
         <div className="center">
           <div id="content" className="peliculas">
-            <h2 className="subheader">Listado de Películas</h2>
-
+            <h2 className="subheader">Uso de props</h2>
+            <p>La idea aquí es interactuar desde componente padre a hijo y biceversa</p>
             {/**Crear componente de cada película */}
             <div id="articles" className="peliculas">
               {this.state.peliculas.map((pelicula, i) => {
@@ -107,7 +107,7 @@ class Peliculas extends Component {
               })}
             </div>
 
-            <p>Película favorita de {this.state.nombre}: </p>
+            <h2>Película favorita de {this.state.nombre}: </h2>
             {/**Condicional con JSX usando CondicionDeVariable && */}
             {/* {this.state.peliFavorita.title &&
                         <p className="favorita">
@@ -121,7 +121,7 @@ class Peliculas extends Component {
                 <span>{this.state.peliFavorita.title}</span>
               </p>
             ) : (
-              <p>No hay favorita seleccionada</p>
+              <p>Aún no hay favorita seleccionada</p>
             )}
 
             <div>
@@ -130,6 +130,8 @@ class Peliculas extends Component {
               </button>
             </div>
 
+            <br></br>
+            <br></br>
 
           </div>
           <Sidebar

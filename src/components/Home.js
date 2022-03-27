@@ -2,26 +2,31 @@ import React, { Component } from "react";
 import Slider from "./Slider";
 import Sidebar from "./Sidebar";
 import Articles from "./Articles";
+import Probando from "./Probando";
 
 class Home extends Component {
   render() {
-    const buttonString = "BLOG";
+    const buttonString = "IR AL BLOG";
 
     return (
-      <div id="home">
-        <Slider title="Single Page Application" btn={buttonString} size="slider-big"></Slider>
-        <div className="center">
-          <div id="content">
-            <h1 className="subheader">Últimos artículos</h1>
-            <Articles
-              home="true"
-            ></Articles>
+      <React.Fragment>
+        <div id="home">
+          <Slider
+            title="Single Page Application"
+            size="slider-big"
+          ></Slider>
+          <div className="center">
+            <div id="content">
+              <h1 className="subheader">Últimos artículos</h1>
+              <Articles home="true"></Articles>
+            </div>
+            <Sidebar blog="true"  btn={buttonString}></Sidebar>
           </div>
-          <Sidebar
-            blog = "true"
-            ></Sidebar>
+
+          <div className="clearfix"></div>
         </div>
-      </div>
+        <Probando></Probando>
+      </React.Fragment>
     );
   }
 }

@@ -51,7 +51,8 @@ class Formulario extends Component {
         {/* <Slider title="Formulario" size="slider-small"></Slider> */}
         <div className="center">
           <div id="content">
-            <h1 className="subheader">Formulario</h1>
+            <h1 className="subheader">Formulario Reactivo</h1>
+            <p>La idea aquí es hacer un formulario completamente dinámico y reactivo, es decir, que se actualice constantemente a medida que voy tipeando:</p>
             {/**vista previa */}
             {(this.state.user.nombre !== "" || this.state.user.apellidos !== "" || this.state.user.bio !== ""  ) && (
               <div id="user-data">
