@@ -7,7 +7,6 @@ import Moment from "react-moment";
 import "moment-timezone";
 import imageDefault from "../assets/images/DEFAULT.2jpg.png";
 import Swal from "sweetalert2";
-import EditArticle from "./EditArticle";
 
 class Article extends Component {
   url;

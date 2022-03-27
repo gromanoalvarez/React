@@ -235,6 +235,10 @@ textarea{
   margin-bottom: 10px;
   float: left;
 }
+.thumb{
+  width: 220px;
+  height: 100px;
+}
 
 #footer{
   background-color: #f7f7f7;

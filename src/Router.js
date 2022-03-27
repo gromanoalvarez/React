@@ -11,9 +11,9 @@ import Error from "./components/Error";
 import Blog from "./components/Blog";
 import Formulario from "./components/Formulario";
 import WithRouter from "./components/WithRouter";
-import ObtenerId from "./components/ObtenerId";
+import ObtenerIdArticulo from "./components/ObtenerIdArticulo";
 import CreateArticle from "./components/CreateArticle";
-import EditArticle from "./components/EditArticle";
+import ObtenerIdEditar from "./components/ObtenerIdEditar";
 
 
 class Router extends Component {
@@ -46,11 +46,14 @@ class Router extends Component {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/blog" element={<Blog />} />
             <Route exact path="/blog/crear" element={<CreateArticle></CreateArticle>}/>
-            <Route exact path="/blog/editar/:id" element={<EditArticle></EditArticle>}/>
-            <Route exact path="/blog/articulo/:id" element={<ObtenerId></ObtenerId>}/>
+            <Route exact path="/blog/editar/:id" element={<ObtenerIdEditar></ObtenerIdEditar>}/>
+            <Route exact path="/blog/articulo/:id" element={<ObtenerIdArticulo></ObtenerIdArticulo>}/>
             <Route exact path="/blog/busqueda/:search" element={<WithRouter/>} />
             <Route exact path="/redirect/:search" element={<GetParamsRedirect/>} />
             <Route exact path="/formulario" element={<Formulario />} />
+
+
+
             <Route exact path="/peliculas" element={<Peliculas />} />
 
 
